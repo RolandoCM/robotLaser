@@ -65,3 +65,11 @@
 2017-10-22 00:36:52,914 - ERROR - root - /home/rolando/PycharmProjects/CariesRobot/comunicacion/serialArduino.py - No se puede establecer conexión con el arduino
 2017-10-22 00:36:53,417 - INFO - root - /home/rolando/PycharmProjects/CariesRobot/procesarImagen/Coordenadas.py - La imagen se proceso y se optubieron las coordenadas
 2017-10-22 00:36:53,420 - ERROR - root - /home/rolando/PycharmProjects/CariesRobot/comunicacion/serialArduino.py - Error en cominicación con arduino
+2017-10-27 00:46:19,344 - ERROR - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/comunicacion/serialArduino.py - No se puede establecer conexión con el arduino
+2017-10-27 00:46:24,993 - INFO - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/procesarImagen/Camara.py - Se guardo la imagen correctamente 2017-10-27_00.jpg
+2017-10-27 00:46:31,048 - INFO - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/procesarImagen/RemoverFondo.py - Imagen procesada satisfactoriamente (Se a removido el fondo de la imagen)
+2017-10-27 00:46:47,514 - ERROR - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/comunicacion/serialArduino.py - No se puede establecer conexión con el arduino
+2017-10-27 00:46:51,416 - INFO - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/procesarImagen/Camara.py - Se guardo la imagen correctamente 2017-10-27_00.jpg
+2017-10-27 00:46:57,403 - INFO - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/procesarImagen/RemoverFondo.py - Imagen procesada satisfactoriamente (Se a removido el fondo de la imagen)
+2017-10-27 00:47:18,468 - INFO - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/procesarImagen/Coordenadas.py - La imagen se proceso y se optubieron las coordenadas
+2017-10-27 00:47:18,470 - ERROR - root - /home/rolando/PycharmProjects/proyectoF/robotLaser/CariesRobot/comunicacion/serialArduino.py - Error en cominicación con arduino
