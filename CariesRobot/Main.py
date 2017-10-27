@@ -1,10 +1,5 @@
-import time
-import logger.logs
 from comunicacion.TransformarCoordenadas import TransformarCoordenadas
-from procesarImagen.Camara import Camara
 from procesarImagen.Coordenadas import Coordenadas
-from procesarImagen.RemoverFondo import RemoverFondo
-from procesarImagen.kmeans.kmeansImage import KmeansImage
 
 # modulo de captura de imagen
 #Camara().Cam()
