@@ -1,14 +1,20 @@
+import datetime
 import numpy as np
 import cv2
 import logging
+import os
 
 class RemoverFondo:
     def remove(self):
         try:
-            cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+            #cv2.namedWindow('image', cv2.WINDOW_NORMAL)
             # cargar imagen
+            ts = datetime.datetime.now()
+            filename = "{}.jpg".format(ts.strftime("%Y-%m-%d_%H"))
+            p = os.path.sep.join(("../photo", filename))
             try:
-                imgo = cv2.imread('photo/carie.jpg')
+                imgo = cv2.imread(p)
+                #cv2.imshow('IMAGEN ORIGINAL', imgo) #mostramos la imagen origunal
                 height, width = imgo.shape[:2]
             except(NameError):
                 logging.error("El archivo no se encontro")
@@ -35,11 +41,14 @@ class RemoverFondo:
             final = background + img1
             gray = cv2.cvtColor(final, cv2.COLOR_BGR2GRAY)
 
-            cv2.imshow('image', final )
-            cv2.imshow('original', imgo)
-            cv2.imshow('gray',gray)
+            #cv2.imshow('image', final )
+            #cv2.imshow('original', imgo)
+            #cv2.imshow('gray',gray)
             try:
-                cv2.imwrite('photo/final.jpg', final)
+                ts = datetime.datetime.now()
+                filename = "{}.jpg".format(ts.strftime("%Y-%m-%d_%H"))
+                p = os.path.sep.join(("../photo/procesada", filename))
+                cv2.imwrite(p, final)
                 logging.info("Imagen procesada satisfactoriamente (Se a removido el fondo de la imagen)")
             except (IOError, NameError):
                 logging.error("Error al intentar guardar el archivo")

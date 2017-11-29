@@ -6,8 +6,9 @@ import logging
 
 class Camara:
     def Cam(self):
+        destroy= False
         try:
-            self.cap = cv2.VideoCapture(0)
+            self.cap = cv2.VideoCapture(1)
             time.sleep(2)
             while 1:
                 # Capture of image and convert to RGB -> HSV
@@ -22,13 +23,18 @@ class Camara:
                        p = os.path.sep.join(("photo", filename))
                        # save the file
                        cv2.imwrite(p, self.imagen.copy())
-                       # print("[INFO] saved {}".format(filename))
+                       print("[INFO] saved {}".format(filename))
                        logging.info("Se guardo la imagen correctamente {}".format(filename))
+                       destroy = True
                        break
+
 
                     except(NameError):
                        logging.error("No se pudo guardar la imagen, revise el path del directorio")
-            cv2.destroyAllWindows()
+            print("[INFO] saved {}".format(filename))
+            if destroy == True:
+                cv2.destroyWindow(self.cam)
+
         except(RuntimeError, IOError):
             logging.error("Error inesperado en tiempo de ejecucion")
 

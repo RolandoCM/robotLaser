@@ -1,10 +1,15 @@
+import datetime
 import numpy as np
 import cv2
 import logging
+import os
 
 class kmeans:
     def identificarCarie(self):
-        img = cv2.imread('photo/final.jpg')
+        ts = datetime.datetime.now()
+        filename = "{}.jpg".format(ts.strftime("%Y-%m-%d_%H"))
+        p = os.path.sep.join(("../photo/procesada", filename))
+        img = cv2.imread(p)
         Z = img.reshape((-1, 3))
         # convert to np.float32
         Z = np.float32(Z)
@@ -28,8 +33,7 @@ class kmeans:
                     if(carie==3):
                         print "tiene caries"
                         break
-        cv2.imshow('res2',res2)
-        cv2.imshow('original', img)
-        cv2.imwrite('../photo/final2.jpg',res2)
-        cv2.waitKey(0)
+        #cv2.imshow('res2',res2)
+        #cv2.imshow('original', img)
+        cv2.imwrite(p,res2)
         cv2.destroyAllWindows()

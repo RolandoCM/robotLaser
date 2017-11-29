@@ -8,7 +8,7 @@ from ttk import Separator
 login = Tk()
 
 class Login():
-    def __init__(self):
+    def miLogin (self):
         login.title("Acceso")
         login.geometry("400x300+400+200")
 
@@ -20,6 +20,7 @@ class Login():
         # el usuario y la contraseña:
         self.usuario = StringVar()
         self.clave = StringVar()
+        self.acceso = BooleanVar()
 
         # Realiza una lectura del nombre de usuario que
         # inició sesión en el sistema y lo asigna a la
@@ -33,7 +34,7 @@ class Login():
 
         #se define los botones
         self.aceptarB = Button(login, text="Aceptar", command=self.aceptar)
-        self.cancelarB= Button(login, text="Cancelar", command=quit)
+        self.cancelarB = Button(login, text="Cancelar", command=quit)
 
         # Se definen las posiciones de los widgets dentro de
         # la ventana. Todos los controles se van colocando
@@ -54,16 +55,17 @@ class Login():
         self.password.focus_set()
 
         login.mainloop()
-
+        return self.acceso.get()
     # El método 'aceptar' se emplea para validar la
     # contraseña introducida. Será llamado cuando se
     # presione el botón 'Aceptar'.
 
     def aceptar(self):
-        if self.clave.get() == '':
+        if self.clave.get() == 'root':
             print("Acceso permitido")
             print("Usuario:   ", self.usuario.get())
             print("Contraseña:", self.password.get())
+            self.acceso.set(True)
             login.destroy()
             #interfaz = Interfaz()
         else:
