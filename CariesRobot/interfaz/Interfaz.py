@@ -101,7 +101,8 @@ if(acceso==True):
         videoframe = tk.LabelFrame(root, text='Video en tiempo real', bg="#0B615E")
         canvas = tk.Canvas(videoframe, width=640, height=480, bg="#0B615E")
         canvas.grid(column=0, row=0)
-        cam = cv2.VideoCapture(0)
+
+        cam = cv2.VideoCapture(1)
         x = vid(cam, root, canvas)
         root.after(0, x.update_video)
 
@@ -139,7 +140,7 @@ if(acceso==True):
 
         headDer = tk.Label(text="Information general", bg="#0B615E", master=derFrame, width=36)
         headDer.grid(column=0, row=0)
-        infoDer = tk.Label(text="hola", bg="#008080", master=derFrame, height=35, width=36)
+        infoDer = tk.Label(text="Info", bg="#008080", master=derFrame, height=35, width=36)
         infoDer.grid(column=0, row=1)
 
         videoframe.grid(column=1, row=1, columnspan=1, rowspan=1, padx=5, pady=5, ipadx=5, ipady=5)
